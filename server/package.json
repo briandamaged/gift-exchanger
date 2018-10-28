@@ -1,0 +1,23 @@
+{
+  "name": "gift-exchanger-server",
+  "version": "0.8.0",
+  "description": "Backend for gift exchange app",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/briandamaged/gift-exchanger.git"
+  },
+  "keywords": [
+    "gift",
+    "exchange"
+  ],
+  "author": "Brian Lauber",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/briandamaged/gift-exchanger/issues"
+  },
+  "homepage": "https://github.com/briandamaged/gift-exchanger#readme"
+}
