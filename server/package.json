@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/briandamaged/gift-exchanger#readme",
   "dependencies": {
+    "config": "^2.0.1",
     "koa": "^2.6.1",
     "koa-bodyparser": "^4.2.1",
     "koa-compose": "^4.1.0",
