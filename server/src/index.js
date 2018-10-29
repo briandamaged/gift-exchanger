@@ -3,7 +3,7 @@ const config = require('config');
 
 const createApp = require('./app');
 
-const PORT = 3000;
+const PORT = config.port;
 
 async function run() {
   const app = createApp(config);
