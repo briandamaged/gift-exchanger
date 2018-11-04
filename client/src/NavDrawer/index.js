@@ -1,6 +1,8 @@
 
 import React from 'react';
 
+import { connect } from 'react-redux';
+
 import { Link } from "react-router-dom";
 
 import Drawer from '@material-ui/core/Drawer';
@@ -15,8 +17,22 @@ import ListItemText from '@material-ui/core/ListItemText';
 import MailIcon from '@material-ui/icons/Mail';
 
 
-const NavDrawer = ()=> (
-  <Drawer open={true} >
+function mapStateToProps(state, ownProps) {
+  return {
+    open: state.navDrawer.open,
+  }
+}
+
+
+function mapDispatchToProps(dispatch) {
+  return {
+    onClose: ()=> dispatch({type: "NAVDRAWER_CLOSE"}),
+  };
+}
+
+
+const _NavDrawer = ({open, onClose})=> (
+  <Drawer open={open} onClose={onClose} >
     <nav>
       <List>
         <ListItem button component={Link} to="/wishlist" >
@@ -39,5 +55,7 @@ const NavDrawer = ()=> (
     </nav>
   </Drawer>
 );
+
+const NavDrawer = connect(mapStateToProps, mapDispatchToProps)(_NavDrawer);
 
 export default NavDrawer;

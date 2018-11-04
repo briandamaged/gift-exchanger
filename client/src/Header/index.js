@@ -1,6 +1,8 @@
 
 import React from 'react';
 
+import {connect} from 'react-redux';
+
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -11,16 +13,27 @@ import MenuIcon from '@material-ui/icons/Menu';
 import styled from 'styled-components';
 
 
+function mapStateToProps(state, ownProps) {
+  return {}
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    onMenuClick: ()=> dispatch({type: "NAVDRAWER_OPEN"}),
+  };
+}
+
+
 // TODO: Consider extracting this
 const Filler = styled.div`
   flex-grow: 1;
 `;
 
-const Header = ()=> (
+const _Header = ({onMenuClick})=> (
   <header>
     <AppBar position="static">
       <Toolbar>
-        <IconButton color="inherit" aria-label="Menu">
+        <IconButton color="inherit" aria-label="Menu" onClick={onMenuClick} >
           <MenuIcon />
         </IconButton>
         <Typography variant="h6" color="inherit" >
@@ -32,5 +45,8 @@ const Header = ()=> (
     </AppBar>
   </header>
 );
+
+
+const Header = connect(mapStateToProps, mapDispatchToProps)(_Header);
 
 export default Header;
