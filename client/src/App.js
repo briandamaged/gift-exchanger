@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import Header from './Header';
+import NavDrawer from './NavDrawer';
 
 import Friends from './Friends';
 import Wishlist from './Wishlist';
@@ -13,6 +14,8 @@ const AppRouter = () => (
   <Router>
     <div>
       <Header />
+
+      <NavDrawer />
 
       <Route path="/" exact component={Index} />
       <Route path="/friends/" component={Friends} />

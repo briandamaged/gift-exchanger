@@ -1,8 +1,6 @@
 
 import React from 'react';
 
-import { Link } from "react-router-dom";
-
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -13,6 +11,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import styled from 'styled-components';
 
 
+// TODO: Consider extracting this
 const Filler = styled.div`
   flex-grow: 1;
 `;
@@ -31,16 +30,6 @@ const Header = ()=> (
         <Button color="inherit">Login</Button>
       </Toolbar>
     </AppBar>
-    <nav>
-      <ul>
-        <li>
-          <Link to="/friends">Friends</Link>
-        </li>
-        <li>
-          <Link to="/wishlist">Wishlist</Link>
-        </li>
-      </ul>
-    </nav>
   </header>
 );
 
