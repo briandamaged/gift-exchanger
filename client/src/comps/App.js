@@ -9,7 +9,7 @@ import NavDrawer from './NavDrawer';
 import Friends from './Friends';
 import Wishlist from './Wishlist';
 
-import store from './store';
+import store from '../store';
 
 const Index = () => <h2>Home</h2>;
 

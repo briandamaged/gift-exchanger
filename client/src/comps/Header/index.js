@@ -12,7 +12,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import styled from 'styled-components';
 
 
-import {open} from '../actions/NavDrawer';
+import {open} from '../../actions/NavDrawer';
 
 function mapStateToProps(state, ownProps) {
   return {}
