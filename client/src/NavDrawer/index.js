@@ -16,6 +16,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 // import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 
+import {close} from '../actions/NavDrawer';
 
 function mapStateToProps(state, ownProps) {
   return {
@@ -26,7 +27,7 @@ function mapStateToProps(state, ownProps) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    onClose: ()=> dispatch({type: "NAVDRAWER_CLOSE"}),
+    onClose: ()=> dispatch(close()),
   };
 }
 
@@ -35,7 +36,7 @@ const _NavDrawer = ({open, onClose})=> (
   <Drawer open={open} onClose={onClose} >
     <nav>
       <List>
-        <ListItem button component={Link} to="/wishlist" >
+        <ListItem button component={Link} to="/wishlist" onClick={onClose} >
           <ListItemIcon>
             <MailIcon />
           </ListItemIcon>
@@ -44,7 +45,7 @@ const _NavDrawer = ({open, onClose})=> (
           />
         </ListItem>
 
-        <ListItem button component={Link} to="/friends" >
+        <ListItem button component={Link} to="/friends" onClick={onClose} >
           <ListItemIcon>
             <MailIcon />
           </ListItemIcon>
