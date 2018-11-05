@@ -13,13 +13,15 @@ import MenuIcon from '@material-ui/icons/Menu';
 import styled from 'styled-components';
 
 
+import {open} from '../actions/NavDrawer';
+
 function mapStateToProps(state, ownProps) {
   return {}
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    onMenuClick: ()=> dispatch({type: "NAVDRAWER_OPEN"}),
+    onMenuClick: ()=> dispatch(open()),
   };
 }
 
